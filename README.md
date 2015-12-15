@@ -64,7 +64,7 @@ CYMTableViewSection扩展了UITableView，提供将SectionID对应的事件独�
   }
   ```
 3. 运行，查看结果
-
+![](https://github.com/caoym/CYMTableViewSection/blob/master/doc/demo.png)
 ## 依赖
 本扩展依赖CYMDelegateChain https://github.com/caoym/CYMDelegateChain
 
