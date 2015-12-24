@@ -5,7 +5,7 @@
 
 #import <objc/runtime.h>
 #import "CYMTableViewSection.h"
-#import "CYMDelegateChain.h" @see https://github.com/caoym/CYMDelegateChain
+#import "CYMDelegateChain.h" // @see https://github.com/caoym/CYMDelegateChain
 
 
 /** 验证条件，若不满足，则抛出异常*/
@@ -213,9 +213,6 @@ NSLog(@"%@",reason);\
     if (_tableView) {
         CYMDelegateChainRemove(_tableView.delegate, _delegateHook, self);
         CYMDelegateChainRemove(_tableView.dataSource, _dataSourceHook, self);
-        
-        NSNumber*num = objc_getAssociatedObject(_tableView, @"__numberOfSections");
-        objc_setAssociatedObject(_tableView, @"__numberOfSections", num?[NSNumber numberWithInt:num.intValue-1]:[NSNumber numberWithInt:0], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         if(reload){
             [_tableView reloadData];
